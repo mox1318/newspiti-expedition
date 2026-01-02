@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --color-neon-lime: #ccff00;
+  --color-deep-space: #050505;
+  --color-aurora-purple: #7a1fed;
+  --color-ice-blue: #a0f0ff;
+  --color-concrete: #1a1a1a;
+
+  --animate-ticker: ticker 10s linear infinite;
+
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+:root {
+  --background: #050505;
+  /* Deep Space */
+  --foreground: #ffffff;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Utilities for Neo-Brutalism */
+.neo-border {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neo-card {
+  background: var(--color-concrete);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neo-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 4px 4px 0px var(--color-neon-lime);
+  border-color: var(--color-neon-lime);
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+}
+
+.text-stroke-hover:hover {
+  -webkit-text-stroke: 0px;
+  color: var(--color-neon-lime);
+}
